@@ -10,6 +10,7 @@ from discord.ext import commands
 
 def config_load():
     with open('data/config.json', 'r', encoding='utf-8') as doc:
+        #  Please make sure encoding is correct, especially after editing the config file
         dump = json.load(doc)
         return dump
 
@@ -19,6 +20,7 @@ async def run():
     Where the bot gets started. If you wanted to create an aiohttp pool or other session for the bot to use,
     it's recommended that you create it here and pass it to the bot as a kwarg.
     """
+
     config = config_load()
     bot = Bot(config=config,
               description=config['description'])
@@ -82,3 +84,4 @@ class Bot(commands.Bot):
               f'Owner: {self.appinfo.owner}\n'
               f'Template Maker: SourSpoon / Spoon#7805')
         print('-' * 10)
+
