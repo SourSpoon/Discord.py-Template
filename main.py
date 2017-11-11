@@ -15,17 +15,6 @@ def config_load():
         return dump
 
 
-async def get_prefix(bot, message):
-    """
-    A coroutine that returns a prefix.
-
-    I have made this a coroutine just to show that it can be done. If you needed async logic in here it can be done.
-    A good example of async logic would be retrieving a prefix from a database.
-    """
-    prefix = ['!']
-    return commands.when_mentioned_or(*prefix)(bot, message)
-
-
 async def run():
     """
     Where the bot gets started. If you wanted to create an aiohttp pool or other session for the bot to use,
@@ -44,7 +33,7 @@ async def run():
 class Bot(commands.Bot):
     def __init__(self, **kwargs):
         super().__init__(
-            command_prefix=get_prefix,
+            command_prefix=self.get_prefix_,
             description=kwargs.pop('description')
         )
         self.start_time = None
@@ -60,6 +49,16 @@ class Bot(commands.Bot):
         """
         await self.wait_until_ready()
         self.start_time = datetime.datetime.utcnow()
+
+    async def get_prefix_(self, bot, message):
+        """
+        A coroutine that returns a prefix.
+
+        I have made this a coroutine just to show that it can be done. If you needed async logic in here it can be done.
+        A good example of async logic would be retrieving a prefix from a database.
+        """
+        prefix = ['!']
+        return commands.when_mentioned_or(*prefix)(bot, message)
 
     async def load_all_extensions(self):
         await self.wait_until_ready()
