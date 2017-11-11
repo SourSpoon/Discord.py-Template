@@ -85,3 +85,12 @@ class Bot(commands.Bot):
               f'Template Maker: SourSpoon / Spoon#7805')
         print('-' * 10)
 
+    async def on_message(self, message):
+        """
+         This event triggers on every message received by the bot. Including one's that it sent it'self
+        """
+        if message.author.bot:
+            return  # ignore all bots
+        await self.process_commands(message)
+
+
