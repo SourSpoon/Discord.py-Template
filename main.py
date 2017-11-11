@@ -15,6 +15,17 @@ def config_load():
         return dump
 
 
+async def get_prefix(bot, message):
+    """
+    A coroutine that returns a prefix.
+
+    I have made this a coroutine just to show that it can be done. If you needed async logic in here it can be done.
+    A good example of async logic would be retrieving a prefix from a database.
+    """
+    prefix = ['!']
+    return commands.when_mentioned_or(*prefix)(bot, message)
+
+
 async def run():
     """
     Where the bot gets started. If you wanted to create an aiohttp pool or other session for the bot to use,
@@ -33,7 +44,7 @@ async def run():
 class Bot(commands.Bot):
     def __init__(self, **kwargs):
         super().__init__(
-            command_prefix=self.get_prefix,
+            command_prefix=get_prefix,
             description=kwargs.pop('description')
         )
         self.start_time = None
@@ -41,17 +52,7 @@ class Bot(commands.Bot):
 
         self.loop.create_task(self.track_start())
         self.loop.create_task(self.load_all_extensions())
-    
-    async def get_prefix(self, bot, message):
-        """
-        A coroutine that returns a prefix.
 
-        I have made this a coroutine just to show that it can be done. If you needed async logic in here it can be done.
-        A good example of async logic would be retrieving a prefix from a database.
-        """
-        prefix = ['!']
-        return commands.when_mentioned_or(*prefix)(bot, message)
-    
     async def track_start(self):
         """
         Waits for the bot to connect to discord and then records the time.
@@ -94,3 +95,7 @@ class Bot(commands.Bot):
         await self.process_commands(message)
 
 
+logging.basicConfig(level=logging.INFO)
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(run())
