@@ -82,13 +82,13 @@ class Bot(commands.Bot):
         self.app_info = await self.application_info()
         print(f'Logged in as: {self.user.name}\n'
               f'Using discord.py version: {discord.__version__}\n'
-              f'Owner: {self.appinfo.owner}\n'
+              f'Owner: {self.app_info.owner}\n'
               f'Template Maker: SourSpoon / Spoon#7805')
         print('-' * 10)
 
     async def on_message(self, message):
         """
-         This event triggers on every message received by the bot. Including one's that it sent it'self
+         This event triggers on every message received by the bot. Including one's that it sent itself
         """
         if message.author.bot:
             return  # ignore all bots
