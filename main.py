@@ -93,7 +93,8 @@ class Bot(commands.Bot):
         await self.process_commands(message)
 
 
-logging.basicConfig(level=logging.INFO)
+if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO)
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(run())
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(run())
