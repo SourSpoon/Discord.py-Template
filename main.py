@@ -60,6 +60,9 @@ class Bot(commands.Bot):
         return commands.when_mentioned_or(*prefix)(bot, message)
 
     async def load_all_extensions(self):
+        """
+        Attempts to load all .py files in /cogs/ as cog extensions
+        """
         await self.wait_until_ready()
         await asyncio.sleep(1)  # ensure that on_ready has completed and finished printing
         cogs = [x.stem for x in Path('cogs').glob('*.py')]
@@ -86,7 +89,10 @@ class Bot(commands.Bot):
 
     async def on_message(self, message):
         """
-         This event triggers on every message received by the bot. Including one's that it sent itself
+        This event triggers on every message received by the bot. Including one's that it sent itself.
+
+        If you wish to have multiple event listeners they can be added in other cogs. All on_message listeners should
+        always ignore bots.
         """
         if message.author.bot:
             return  # ignore all bots

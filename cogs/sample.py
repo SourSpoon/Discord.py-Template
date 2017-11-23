@@ -13,7 +13,7 @@ class Sample:
         """
         await ctx.send('Tested!')
     
-    @commands.group(has_subcommands=True, invoke_without_command=True)
+    @commands.group(invoke_without_command=True)
     async def foo(self, ctx):
         """
         A sub command group, Showing how sub command groups can be made.
