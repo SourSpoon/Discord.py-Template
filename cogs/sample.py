@@ -5,6 +5,15 @@ from discord.ext import commands
 class Sample:
     def __init__(self, bot):
         self.bot = bot
+
+
+    def on_guild_join(self, guild):
+        """
+        Events in cogs don't need the decorator
+
+        This event receives the ghe guild that joined.
+        """
+        print(f'Joined {guild.name} with {guild.member_count} users!')
     
     @commands.command()
     async def test(self, ctx):
