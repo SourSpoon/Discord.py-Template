@@ -11,7 +11,7 @@ class Sample:
         """
         Events in cogs don't need the decorator
 
-        This event receives the ghe guild that joined.
+        This event receives the the guild when the bot joins.
         """
         print(f'Joined {guild.name} with {guild.member_count} users!')
     
