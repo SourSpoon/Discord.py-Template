@@ -1,10 +1,10 @@
 ## Discord.Py Template
 
-**Recently I have been made aware that Danny has added a template and bot generator within the discord.py module. It's a little more simple than mine, but otherwise is short and concise. If you would rather use his you can find it by doing `python -m discord newbot` from your terminal/ command line**
-
-This is a simple template that has the basics that you would either need or want in pretty much all discord bots written in discord.py. **IT DOES EXPECT YOU TO KNOW PYTHON!**
+This is a simple template that has the basics that you would either need or want in pretty much all discord bots written in discord.py (rewrite branch). **IT DOES EXPECT YOU TO KNOW PYTHON!**
 Unlike [red bot,](https://github.com/Cog-Creators/Red-DiscordBot) and other similar projects, which doesnt expect you to know any coding and is a relatively complete bot in it's own right, this is not.
 This is a barebone skeleton for you to implement your own logic, commands and features with a bit of the boiler plate taken care of.
+
+**Recently I have been made aware that Danny has added a template and bot generator within the discord.py module. It's a little more simple than mine, but otherwise is short and concise. If you would rather use his you can find it by doing `python -m discord newbot` from your terminal/ command line**
 
 Note this uses the Rewrite branch of discord.py. which can be found [here,](https://github.com/Rapptz/discord.py/tree/rewrite) and it's licence is [here.](https://github.com/Rapptz/discord.py/blob/rewrite/LICENSE)
 
