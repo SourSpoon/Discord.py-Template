@@ -14,6 +14,7 @@ I have intentionally not included most logic, and instead just laid the ground w
 So feel free to fork it and create your own bot!
 
 Helpful Links:
-- https://discord.gg/discord-api A discord server with discusions on bot building and the API
-- http://discordpy.readthedocs.io/en/rewrite Discord.py's documentation for the rewrite branch
-- https://discordapp.com/developers/applications/me Where you can create your bot account & token
+- https://discord.gg/discord-api - A discord server with discusions on bot building and the API
+- https://discord.gg/r3sSKJJ - The official Discord.py support server managed by Danny
+- http://discordpy.readthedocs.io/en/rewrite - Discord.py's documentation for the rewrite branch
+- https://discordapp.com/developers/applications/me - Where you can create your bot account & token
