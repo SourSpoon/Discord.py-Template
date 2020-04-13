@@ -84,7 +84,7 @@ class Bot(commands.Bot):
         print(f'Logged in as: {self.user.name}\n'
               f'Using discord.py version: {discord.__version__}\n'
               f'Owner: {self.app_info.owner}\n'
-              f'Template Maker: SourSpoon / Spoon#7805')
+              f'Template Maker: SourSpoon / Spoon#0001')
         print('-' * 10)
 
     async def on_message(self, message):
