@@ -8,7 +8,7 @@ class Sample(commands.Cog):
 
 
     @commands.Cog.listener()
-    def on_guild_join(self, guild):
+    async def on_guild_join(self, guild):
         """
         This event receives the the guild when the bot joins.
         """
